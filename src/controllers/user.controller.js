@@ -4,7 +4,7 @@ import { User } from "../models/user.model.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
-const registerUser = asyncHandler(async function (req, res) {
+const registerUser = asyncHandler(async (req, res) => {
   // 1) Get user details from frontend
   // 2) Validation - Not empty
   // 3) Check if user already exists: username, email
@@ -76,4 +76,13 @@ const registerUser = asyncHandler(async function (req, res) {
     .json(new ApiResponse(200, createdUser, "User registered Successfully"));
 });
 
-export { registerUser };
+const loginUser = asyncHandler(async (req, res) => {
+  // 1) req body -> data
+  // 2) username or email
+  // 3) find the user
+  // 4) check the password
+  // 5) access and refresh token
+  // 6) send cookie
+});
+
+export { registerUser, loginUser };
